@@ -1,0 +1,163 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+      <div class="col-md-6" style="font-family: 'Lato', sans-serif;">
+        <h1 class="title fw-bold">About Us</h1>
+        <p>Welcome to Kbee Store Site! We are a team of passionate individuals who are dedicated to providing the best products and services to our customers. Our mission is to make shopping online a convenient and enjoyable experience for everyone.</p>
+        <p>Our journey began in 2017 when we identified a gap in the market for high-quality UK-Used Laptop Products. We started out small, working from a garage and packing orders by hand. But with a commitment to quality and a strong work ethic, we quickly grew into a leading ecommerce site that offers a wide range of products at affordable prices.</p>
+        <p>Today, we have a team of experts who work tirelessly to ensure that our products meet the highest standards of quality and safety. We source our products from trusted suppliers around the world, and we use the latest technology to make sure that our customers receive their orders quickly and securely.</p>
+        <p>At Kbee Store, we believe that our success is built on our commitment to customer satisfaction. We strive to provide exceptional customer service, and we welcome feedback and suggestions from our customers to help us improve.</p>
+        <p>Thank you for visiting Kbee Store Site, and we look forward to serving you. If you have any questions or comments, please don't hesitate to <a href="#" class="text-decoration-none">Contact us</a>.</p>
+      </div>
+      <div class="col-md-6 mt-5">
+        <img src="{% static 'app/images/banner/ban1.jpg' %}" alt="Placeholder Image" class="img-fluid">
+      </div>
+    </div>
+</div>
+{% endblock main-content %}
+
+
+
+{% block footer %}
+<hr>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid">
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social media:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Kbee Store</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Our products is UK-Used items or secondhand products which is very neat with no scratch. <br>
+            Buying second hand products is simply a great way to save money.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'category' 'HP'%}" class="text-white text-decoration-none">HP Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'AP'%}" class="text-white text-decoration-none">Apple Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'LE'%}" class="text-white text-decoration-none">Lenovo Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'MS'%}" class="text-white text-decoration-none">Other Laptops</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'service' %}" class="text-white text-decoration-none">Our Service</a>
+            </p>
+            <p>
+              <a href="{% url 'about' %}" class="text-white text-decoration-none">About Us</a>
+            </p>
+            <p>
+              <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Policy and Privacy</a>
+            </p>
+            <p>
+              <a href="#" class="text-white text-decoration-none">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i>Ghana, Accra-Central </p>
+            <p><i class="fas fa-envelope mr-3"></i> kbeecomputers@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +233277597787</p>
+            <p><i class="fab fa-whatsapp mr-3"></i> +233248147215</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright:
+      <a class="text-white text-decoration-none" href="#"
+         >Kbee Store | P&J Tech Inc</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+{% endblock footer %}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    
+    <link rel="shortcut icon" href="{% static 'app/images/home/favicon.ico' %}" type="image/svg+xml">
+    
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+     
+    <!-- Own carousel min.css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Own carousel theme.min.css cdn file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href = "{% static 'app/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href = "{% static 'app/css/all.min.css' %}">
+    <link rel="stylesheet" href = "{% static 'app/css/style.css' %}">
+
+    
+    <title>Kbee Store | {% block title %}{% endblock title %} </title>
+</head>
+<style>
+  {
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+.body{
+  font-family:font-family: 'Poppins', sans-serif;
+}
+  
+}
+
+{% block css %}{% endblock css %}
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <div class="container-fluid " style="font-size:20px;">
+      <a class="navbar-brand" href="{% url 'home' %}" style="color:orange; font-size:25px; font-weight:bolder;"><span style="font-size:36px;">K</span>BEE<span style="font-size:36px;">S</span>TORE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-family: 'Poppins', sans-serif;">
+                <li class="nav-item">
+                  <a class="nav-link active text-decoration-none" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-decoration-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Our Products
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'category' 'AP'%}">Apple Laptops</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'HP'%}">Hp Laptops</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'LE'%}">Lenovo Laptops</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'DL'%}">Dell Laptops</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'Acer'%}">Acer</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'Toshiba'%}">Toshiba</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'Asus'%}">Asus</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'MS'%}">Microsoft Laptops</a></li>
+                  </ul>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link btn text-decoration-none" href="{% url 'showcart' %}">
+                    <i class="bi bi-bag-fill text-primary" style="font-size:25px;"></i><sup><span  style="font-size:20px;">{% if totalitem > 0 %}{{totalitem}}{% else%}0{% endif %}</span></sup>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn text-decoration-none" href="{% url 'showwishlist' %}">
+                      <i class="bi bi-heart-fill text-danger" style="font-size:25px;"></i><sup><span  style="font-size:20px;">{% if wishitem > 0 %}{{wishitem}}{% else%}0{% endif %}</span></sup>
+                </a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-decoration-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{request.user}}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Orders</a></li>
+                  <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+              </li>
+
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link text-decoration-none" href="{% url 'register'%}">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-decoration-none" href="{% url 'login'%}">Login</a>
+                </li>
+              
+              {% endif %}
+            </div>
+        </ul>
+        <form class="d-flex mb-2" action="{% url 'product_search' %}" method="GET">
+          <input class="form-control me-2" type="search" placeholder="Search" name="search_query" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>  
+    {% block banner_slider %}{% endblock banner_slider %}
+    {% block info %}{% endblock info %}
+    <br><br><br><br><br><br>
+    
+    {% block main-content%}{% endblock main-content %}
+    {% block footer %}{% endblock footer %}
+    {% comment %} {% block payment-gateway%}{% endblock payment-gateway %} {% endcomment %}
+
+
+
+<!-- Owl Carousel min.js cdn file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      {% block js %}{% endblock js %}
+    </script>
+    <script src="{% static 'app/js/all.min.js' %}"></script>
+    <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'app/js/myscript.js' %}"></script>
+</body>
+</html>

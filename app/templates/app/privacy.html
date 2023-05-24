@@ -1,0 +1,2401 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Privacy Notice{% endblock title %}
+
+{% block main-content %}
+
+<style>
+    *,
+    ::after,
+    ::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box
+    }
+    
+    .-container {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        overflow: hidden
+    }
+    
+    .head1 {
+        text-align: center;
+        color: #000;
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    
+    .-tbl-content {
+        margin-bottom: 20px;
+        padding: 20px 20px 20px 40px;
+        background: #e6e6e6;
+        border: 1px solid #efefef;
+        border-radius: 2px;
+        font-size: 110%;
+    }
+    
+    .-tbl-content ol li {
+        padding: 0 0 5px;
+        
+    }
+    .-tbl-content ol li a{
+        text-decoration:none;
+    }
+    
+    .-tbl-content a:hover {
+        color: #f90;
+    }
+    
+    .-tandcs_items {
+        list-style: none;
+    }
+    
+    .row {
+        clear: both;
+        position: relative;
+            padding-bottom: 80px;
+    }
+    
+    .-btn-shop-now  {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-family: Roboto, sans-serif;
+        color: #ffffff !important;
+        font-size: 16px;
+        background: #F68C1E;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .-btn-shop-now:hover {
+        text-decoration: none;
+        color: #ffffff !important;
+    }
+    
+    .clor {
+        text-decoration: none;
+        color: #FF9900;
+        text-align: center;
+        font-style: normal;
+        font-size: 20px;
+    }
+    
+    .ToTop {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: #444;
+        text-decoration: none;
+        position: fixed;
+        bottom: 75px;
+        right: 40px;
+        background: #f90 url(https://static.jumia.com.ng/cms/magazine-store/up-arrow.png) no-repeat center center;
+        opacity: .7;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 5px;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        transition: 1s;
+        z-index: 1;
+        background-size: 30px 30px;
+    }
+    
+    .special-offer img {
+        width: 100%
+    }
+    
+    .-orange {
+        color: orange
+    }
+    
+    .-w75 {
+        width: 75%
+    }
+    
+    .-w86 {
+        width: 86%
+    }
+    
+    main {
+        color: #000
+    }
+    
+    html {
+        scroll-behavior: smooth
+    }
+    
+    .section {
+        clear: both;
+        padding: 0;
+        margin: 0
+    }
+    
+    .col {
+        display: block;
+        float: left;
+        margin: 1% 0 1% .2%
+    }
+    
+    .col:first-child {
+        margin-left: 0
+    }
+    
+    .group:after,
+    .group:before {
+        content: "";
+        display: table
+    }
+    
+    .group:after {
+        clear: both
+    }
+    
+    .group {
+        zoom: 1
+    }
+    
+    .span_12_of_12 {
+        width: 100%
+    }
+    
+    .span_11_of_12 {
+        width: 91.53%
+    }
+    
+    .span_10_of_12 {
+        width: 83.06%
+    }
+    
+    .span_9_of_12 {
+        width: 74.6%
+    }
+    
+    .span_8_of_12 {
+        width: 66.13%
+    }
+    
+    .span_7_of_12 {
+        width: 57.66%
+    }
+    
+    .span_6_of_12 {
+        width: 49.2%
+    }
+    
+    .span_5_of_12 {
+        width: 40.73%
+    }
+    
+    .span_4_of_12 {
+        width: 32.26%
+    }
+    
+    .span_3_of_12 {
+        width: 23.8%
+    }
+    
+    .span_2_of_12 {
+        width: 15.33%
+    }
+    
+    .span_1_of_12 {
+        width: 6.866%
+    }
+    
+    .span_5_of_5 {
+        width: 100%
+    }
+    
+    .span_4_of_5 {
+        width: 79.68%
+    }
+    
+    .span_3_of_5 {
+        width: 59.36%
+    }
+    
+    .span_2_of_5 {
+        width: 39.04%
+    }
+    
+    .span_1_of_5 {
+        width: 18.72%
+    }
+    
+    .flt-lft {
+        float: left
+    }
+    
+    .flt-rgt {
+        float: right
+    }
+    
+    .clear {
+        clear: both
+    }
+    
+    .txt-gry {
+        color: #dadada
+    }
+    
+    .txt-wht {
+        color: #fff
+    }
+    
+    .txt-blk {
+        color: #000
+    }
+    
+    .txt-ctr {
+        text-align: center
+    }
+    
+    .txt-bld {
+        font-weight: 700
+    }
+    
+    .title {
+        font-size: 40px;
+        font-weight: 600;
+        width: 99.4%
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        width: 60%;
+        text-transform: uppercase;
+        margin-top: 16px
+    }
+    
+    .txt1 {
+        font-size: 12px;
+        width: 80%;
+        margin-left: 2px;
+        line-height: 20px
+    }
+    
+    .txt2 {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .04em;
+        width: 70%;
+        margin-top: 16px;
+        line-height: 24px
+    }
+    
+    .sectiontitle {
+        font-size: 30px;
+        font-weight: 600;
+        width: 85.4%;
+        padding: 10px
+    }
+    
+    .SubscribeCTA {
+        background: orange;
+        width: 145px;
+        float: left;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 28px auto;
+        text-align: center;
+        color: #000
+    }
+    
+    .SubscribeCTA:hover {
+        background: #f68b1e
+    }
+    
+    .bgs1 {
+        background-image: url(https://tn.jumia.is/cms/campaign-TN/2020/Background-prime-2.png);
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 79%;
+        min-height: 420px;
+        position: relative
+    }
+    
+    .s1img {
+        width: 445px;
+        float: right;
+        margin-right: 26px
+    }
+    
+    .mg20 {
+        margin: 20px;
+        margin-top: 50px
+    }
+    
+    .product-price {
+        font-size: 13.1px;
+        font-weight: 600;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 4px 0;
+        color: #000;
+        text-align: center
+    }
+    
+    .product-buy {
+        background: orange;
+        width: 40%;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 auto;
+        text-align: center;
+        color: #000;
+        float: left
+    }
+    
+    .product-buy:hover {
+        background: #f17e0a
+    }
+    
+    .prime-service {
+        display: inline-flex;
+        width: 98%;
+        max-width: 98%;
+        height: 175px;
+        max-height: 175px;
+        background: #fff;
+        box-shadow: 0 4px 8px 1px rgba(27, 38, 49, .1);
+        border-radius: 10px
+    }
+    
+    .prime-service-img {
+        width: 25%;
+        min-width: 150px;
+        display: table;
+        margin-top: 2%
+    }
+    
+    .termcondition {
+        color: #f68b1e;
+        text-decoration: underline
+    }
+    
+    table,
+    td,
+    tr {
+        border: 1px solid #ededed;
+        text-align: center;
+        width: calc(100% / 3);
+        font-size: 15px;
+        padding: 10px 0;
+        font-weight: 500
+    }
+    
+    tr:first-child {
+        background: orange;
+        color: #fff;
+        font-weight: 700;
+        font-size: 19px;
+        height: 50px
+    }
+    
+    .tr1 {
+        text-align: left;
+        padding-left: 18px !important
+    }
+    
+    .fw700 {
+        font-weight: 700
+    }
+    
+    .stepstitle {
+        font-size: 17px;
+        font-weight: 600;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 10px 0;
+        height: 44px;
+        max-height: 44px;
+        color: #000;
+        text-align: center
+    }
+    
+    .stepsinfo {
+        font-size: 12px;
+        color: #000;
+        width: 90%
+    }
+    
+    .stepsimg {
+        width: 80%;
+        padding: 5px
+    }
+    
+    .stepsbox {
+        background: #fff;
+        box-shadow: 0 0 12px #f4f4f4;
+        border-radius: 10px;
+        max-width: 275px;
+        max-height: 541px
+    }
+    
+    .stepsbox:hover {
+        box-shadow: 0 4px 8px 1px rgba(27, 38, 49, .1)
+    }
+    
+    .prime-benefits {
+        margin-left: 27px;
+        margin-top: 14px
+    }
+    
+    .prime-benefitstitle {
+        font-size: 19px;
+        font-weight: 600;
+        width: 90%
+    }
+    
+    .box1 {
+        margin: auto;
+        width: 100%;
+        height: 100px
+    }
+    
+    .boxvideo {
+        background: #fff;
+        box-shadow: 0 4px 8px 1px rgba(27, 38, 49, .1);
+        border-radius: 10px;
+        padding: 15px;
+        width: 100%;
+        height: 337px
+    }
+    
+    .osh-featured-box>header>.headline {
+        font-size: 30px;
+        font-weight: 700;
+        width: 85.4%;
+        padding: 10px;
+        border: none;
+        height: 64px;
+        background: #fbfbfb;
+        width: 100%;
+        color: #000
+    }
+    
+    .Services-section {
+        display: inline-flex;
+        width: 97%;
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 15px;
+        box-shadow: 0 4px 13px 5px rgba(27, 38, 49, .1)
+    }
+    
+    .express-food {
+        width: calc(100% / 2);
+        padding: 3% 2% 1% 4%
+    }
+    
+    .txt4 {
+        font-size: 12px;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 11px;
+        line-height: 20px
+    }
+    
+    .services-details {
+        margin-left: -40px;
+        font-size: 11.5px;
+        width: 100%
+    }
+    
+    .benefits-table {
+        display: inline-flex;
+        width: 98%;
+        max-width: 98%;
+        height: 100%;
+        background: #fff;
+        box-shadow: 0 4px 8px 1px rgba(27, 38, 49, .1);
+        border-radius: 10px
+    }
+    
+    .benefits-img {
+        width: 25%;
+        min-width: 150px;
+        display: table
+    }
+    
+    .benefits-details-section {
+        padding: 22px 14px 10px;
+        max-width: 65%;
+        display: table-cell
+    }
+    
+    .wd90 {
+        width: 90%
+    }
+    
+    .wd100 {
+        width: 100%
+    }
+    
+    .special-offer {
+        background: #fff;
+        box-shadow: 0 4px 8px 1px rgba(27, 38, 49, .1);
+        border-radius: 10px;
+        padding: 15px;
+        width: 100%
+    }
+    
+    .prchk:before {
+        position: relative;
+        display: inline-block;
+        content: " ";
+        left: -2px;
+        top: 7px;
+        width: 28px;
+        height: 28px;
+        background-image: url(https://tn.jumia.is/cms/campaign-TN/2020/Basic-ss/prime/g-check-2x.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain
+    }
+    
+    .offer-benefitstitle {
+        font-size: 18.5px;
+        font-weight: 600;
+        width: 95%;
+        height: 24px
+    }
+    
+    .pdmg {
+        margin: 0 0 0 .2%
+    }
+    
+    .b2 {
+        color: orange;
+        font-size: 13px
+    }
+    
+    :root {
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --darker: #282828;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px
+    }
+    
+    *,
+    ::after,
+    ::before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+    
+    ::selection {
+        color: rgba(246, 139, 30, 1);
+        background: rgba(54, 54, 54, .62)
+    }
+    
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar
+    }
+    
+    article,
+    aside,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section {
+        display: block
+    }
+    
+    body {
+        margin: 0;
+        background-color: #f5f5f5
+    }
+    
+    main,
+    main header,
+    section.layout {
+        overflow-y: hidden;
+        overflow-x: hidden
+    }
+    
+    .-tandcs_items a {
+        color: inherit;
+        text-decoration: underline;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects
+    }
+    
+    a:hover {
+        color: inherit;
+        text-decoration: none
+    }
+    
+    img {
+        vertical-align: middle;
+        border-style: none
+    }
+    
+    .-animate,
+    .-animate * {
+        -webkit-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -moz-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -o-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -ms-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        transition: all .17s cubic-bezier(0, 0, .58, 1)
+    }
+    
+    .-container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto
+    }
+    
+    .-container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto
+    }
+    
+    .-container.-ctnr-list {
+        max-width: 440px
+    }
+    
+    .-row {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%
+    }
+    
+    section.layout [class^="-col"] {
+        position: relative;
+        width: auto;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+    
+    .-col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%
+    }
+    
+    .-col-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+    }
+    
+    .-col-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+    
+    .-col-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+    
+    .-col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    
+    .-col-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+    
+    abbr,
+    blockquote,
+    button,
+    dd,
+    dl,
+    dt,
+    fieldset,
+    figure,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hgroup,
+    input,
+    legend,
+    p,
+    pre {
+        margin: 0;
+        padding: 0
+    }
+    
+    section.layout+section.layout {
+        padding-top: 1.668em;
+        padding-bottom: 1.668em
+    }
+    
+    section.layout h1 {
+        width: 100%;
+        margin-bottom: .5em;
+        line-height: 1.1;
+        font-size: 2.2em;
+        text-align: center
+    }
+    
+    section.layout h2 {
+        width: 100%;
+        margin-bottom: .5em;
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 1.1;
+        font-size: 3.1em;
+        text-align: center
+    }
+    
+    section.layout h3 {
+        width: 100%;
+        margin-bottom: .5em;
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 1.1;
+        font-size: 2.1em;
+        font-weight: 500;
+        text-align: initial
+    }
+    
+    section.layout h4 {
+        width: 100%;
+        margin-bottom: .38em;
+        line-height: 1.1;
+        font-size: 2em;
+        font-weight: 600
+    }
+    
+    section.layout h1+h2 {
+        margin-top: -1em
+    }
+    
+    .-align-self-center {
+        -ms-flex-item-align: center !important;
+        align-self: center !important
+    }
+    
+    .-align-self-bottom {
+        -ms-flex-item-align: flex-end !important;
+        align-self: flex-end
+    }
+    
+    .-terms,
+    a.to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 7px;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+        transform: rotate(-90deg);
+        background-color: #f68b1e;
+        background-image: url(https://eg.jumia.is/cms/sandbox/bf19/arrow-next.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 30%;
+        border-radius: .6rem;
+        box-shadow: 0 0 2px 0 rgba(168, 168, 178, .768);
+        -webkit-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -moz-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -o-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -ms-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        transition: all .17s cubic-bezier(0, 0, .58, 1);
+        display: none
+    }
+    
+    a.to-top.-visible {
+        display: block
+    }
+    
+    @media only screen and (max-width:767px) {
+        section.layout h1 {
+        font-size: 3.2em
+        }
+    
+        section.layout h2 {
+        font-size: 2.6em
+        }
+    
+        section.layout h3 {
+        font-size: 2em
+        }
+    
+        section.layout h4 {
+        font-size: 1.7em
+        }
+    }
+    
+    @media (min-width:576px) {
+    
+        .-container,
+        section[id*=featured] {
+        max-width: 720px
+        }
+    
+        .-col-sm-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+        }
+    
+        .-col-sm-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+        }
+    
+        .-col-sm-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+        }
+    }
+    
+    @media (min-width:768px) {
+    
+        .-container,
+        section[id*=featured] {
+        max-width: 720px
+        }
+    
+        .-col-md {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%
+        }
+    
+        .-col-md-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+        }
+    
+        .-col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+        }
+    
+        .-col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+        }
+    }
+    
+    @media (min-width:992px) {
+    
+        .-container,
+        section[id*=featured] {
+        max-width: 975px
+        }
+    }
+    
+    @media (min-width:1200px) {
+    
+        .-container,
+        section[id*=featured] {
+        max-width: 1170px
+        }
+    }
+    
+    section.layout.-header-nav .-header-banner {
+        padding-right: 0;
+        padding-left: 0;
+        background-image: url(https://ng.jumia.is/cms/8-18/jumia-prime/Jumia-prime-logo-png.png);
+        background-position: center 30%;
+        background-repeat: no-repeat;
+        background-size: 20%
+    }
+    
+    section.layout.-header-nav .-header-banner::before {
+        position: relative;
+        display: block;
+        content: " ";
+        padding-top: 30.227273%
+    }
+    
+    section.layout.-header-nav figure.-container {
+        color: #fff;
+        text-align: initial;
+        background-color: #000
+    }
+    
+    section.layout.-header-nav figure.-container p {
+        margin-left: 1.568%
+    }
+    
+    @media only screen and (min-width:576px) {
+        section.layout.-header-nav figure.-container p {
+        margin-left: 8px
+        }
+    }
+    
+    @media only screen and (min-width:768px) {
+        section.layout.-header-nav .-header-banner {
+        background-image: url(https://ng.jumia.is/cms/8-18/jumia-prime/Jumia-prime-logo-png.png)
+        }
+    
+        section.layout.-header-nav .-header-banner::before {
+        padding-top: 11.052632%
+        }
+    
+        section.layout.-header-nav figure.-container p {
+        margin-left: 18px
+        }
+    }
+    
+    @media only screen and (min-width:992px) {
+        section.layout.-header-nav figure.-container p {
+        margin-left: 30px
+        }
+    }
+    
+    @media only screen and (min-width:1200px) {
+        section.layout.-header-nav figure.-container p {
+        margin-left: 39px
+        }
+    }
+    
+    section.-container.-nav.-header.-top.-mobile-fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        box-shadow: 0 0 .8em rgba(168, 168, 178, 1);
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        box-shadow: 0 0 .8em rgba(168, 168, 178, 1);
+        z-index: 10
+    }
+    
+    section.-container.-nav.-header.-top .if-fixed {
+        height: 0
+    }
+    
+    section.-container.-nav.-header.-top.-mobile-fixed+.if-fixed {
+        height: 112px
+    }
+    
+    @media only screen and (max-width:768px) {
+        section.-container.-nav.-header.-top.-mobile-fixed+.if-fixed {
+        height: 178px
+        }
+    }
+    
+    section.layout.-header-nav {
+        margin-bottom: 0;
+        background-color: #000;
+        box-shadow: 0 0 1em 0 rgba(55, 55, 55, .768)
+    }
+    
+    section.layout.-header-nav .-nav {
+        background-color: rgba(239, 239, 239, 1)
+    }
+    
+    .-header-nav nav {
+        overflow: hidden;
+        padding: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        position: relative;
+        text-align: center;
+        color: #333;
+        height: 112px;
+        z-index: 1
+    }
+    
+    .-header-nav span.-arrow-nav {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 20px;
+        margin: 0;
+        cursor: pointer;
+        background-color: rgba(239, 239, 239, 1);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1
+    }
+    
+    .-header-nav span#left.-arrow-nav {
+        left: 3px;
+        background-image: url(https://eg.jumia.is/cms/sandbox/prev-arrow.png);
+        box-shadow: 5px 0 5px rgba(239, 239, 239, 1)
+    }
+    
+    .-header-nav span#right.-arrow-nav {
+        right: 3px;
+        background-image: url(https://eg.jumia.is/cms/sandbox/next-arrow.png);
+        box-shadow: -5px 0 5px rgba(239, 239, 239, 1)
+    }
+    
+    nav.-col-navbar {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%
+    }
+    
+    .-col-educ {
+        display: flex;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center
+    }
+    
+    section.-prime-items .-row {
+        margin-top: 15px
+    }
+    
+    section.-how .-row {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding-top: .8em;
+        padding-bottom: .8em;
+        border-radius: .8em;
+        box-shadow: 0 0 .8em rgba(168, 168, 178, .333);
+        overflow-y: hidden !important
+    }
+    
+    .-col-how {
+        display: flex;
+        flex-direction: column;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center
+    }
+    
+    .-col-how * {
+        line-height: 1.15
+    }
+    
+    .-col-how h2,
+    .-col-how h3,
+    .-col-how p {
+        max-width: 220px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+        letter-spacing: -.05vw
+    }
+    
+    .-col-how h2+h3,
+    .-col-how h4+p {
+        margin-bottom: .6em
+    }
+    
+    .-col-how figure {
+        margin: auto auto 0;
+        width: 100%;
+        max-width: 220px;
+        max-height: 380px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain
+    }
+    
+    .-col-how figure::before {
+        display: block;
+        content: " ";
+        padding-top: 180%
+    }
+    
+    @media only screen and (max-width:992px) {
+        .-col-how {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+        }
+    
+        .-col-how:nth-child(n+3) {
+        margin-top: 1.6em;
+        padding-top: 1em;
+        border-top: 1px solid rgba(168, 168, 178, 1)
+        }
+    }
+    
+    @media only screen and (max-width:575px) {
+        section.-prime-items .-row {
+        margin-right: -15px;
+        margin-left: -15px
+        }
+    
+        section.-how .-row,
+        section.-prime-benefits .-row,
+        section.-prime-offers .-row {
+        margin-right: auto;
+        margin-left: auto
+        }
+    
+        .-col-how {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+        }
+    
+        .-col-how:nth-child(n+2) {
+        margin-top: 1.6em;
+        padding-top: 1em;
+        border-top: 1px solid rgba(168, 168, 178, 1)
+        }
+    
+        .-col-how figure {
+        margin: auto;
+        max-width: 220px
+        }
+    }
+    
+    .-col-educ .-educ-link {
+        display: block;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 50%;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+    
+    .-col-educ .-educ-link a {
+        position: relative;
+        display: block;
+        padding: 10px 0;
+        background-color: #fff;
+        border: 1px solid rgba(174, 174, 174, 1);
+        border-radius: .4em
+    }
+    
+    .-col-educ .-educ-link a:hover {
+        box-shadow: inset 0 0 3px 0 rgba(174, 174, 174, 1)
+    }
+    
+    .-col-educ .-educ-link a::after {
+        position: absolute;
+        display: block;
+        content: " ";
+        width: 20px;
+        top: 35%;
+        right: 0;
+        bottom: 35%;
+        background-image: url(https://eg.jumia.is/cms/sandbox/next-arrow.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        -webkit-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -moz-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -o-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        -ms-transition: all .17s cubic-bezier(0, 0, .58, 1);
+        transition: all .17s cubic-bezier(0, 0, .58, 1)
+    }
+    
+    .-col-educ .-educ-link a:hover::after {
+        width: 13px;
+        top: 30%;
+        bottom: 30%
+    }
+    
+    .-col-educ .-educ-link a span {
+        display: block;
+        width: 80%;
+        margin: auto 15% auto 5%;
+        font-size: 11px;
+        line-height: 1.09091;
+        font-weight: 700;
+        letter-spacing: -.008em
+    }
+    
+    @media only screen and (max-width:768px) {
+        .-col-educ {
+        margin-bottom: 20px
+        }
+    }
+    
+    @media only screen and (max-width:576px) {
+        nav.-col-navbar {
+        width: 100%;
+        margin: auto
+        }
+    
+        .-col-educ {
+        margin: auto;
+        padding: 0 15px 12px
+        }
+    }
+    
+    @media only screen and (min-width:576px) {
+        nav.-col-navbar {
+        width: calc(100% - 300px);
+        max-width: 540px;
+        margin-right: auto;
+        margin-left: auto
+        }
+    }
+    
+    @media only screen and (min-width:768px) {
+        nav.-col-navbar {
+        width: calc(100% - 300px);
+        max-width: 440px;
+        margin-left: 0
+        }
+    
+        .-col-educ {
+        max-width: 250px
+        }
+    }
+    
+    @media only screen and (min-width:992px) {
+        nav.-col-navbar {
+        width: calc(100% - 300px);
+        max-width: 640px
+        }
+    
+        .-col-educ {
+        max-width: 300px
+        }
+    }
+    
+    @media only screen and (min-width:1200px) {
+        nav.-col-navbar {
+        width: calc(100% - 300px);
+        max-width: 840px
+        }
+    
+        .-col-educ {
+        max-width: 300px
+        }
+    }
+    
+    .__link-items {
+        position: relative;
+        list-style: none;
+        margin: 0 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 50px;
+        padding-right: 0;
+        padding-left: 0;
+        white-space: nowrap;
+        z-index: 0
+    }
+    
+    .__link-item {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 -.11765em;
+        padding: 0 10px
+    }
+    
+    .__link {
+        color: #111;
+        display: block;
+        margin-top: 3px;
+        padding: 0;
+        position: relative;
+        z-index: 1
+    }
+    
+    .__link-label {
+        font-size: 11px;
+        line-height: 1.09091;
+        font-weight: 400;
+        letter-spacing: -.008em;
+        display: block;
+        margin: 0
+    }
+    
+    .__link-new {
+        font-size: 9px;
+        line-height: 1.22226;
+        font-weight: 400;
+        letter-spacing: -.006em;
+        color: #ef5602;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%
+    }
+    
+    .__link-icon {
+        background: center bottom no-repeat;
+        display: block;
+        margin: 0 auto 6px;
+        height: 54px
+    }
+    
+    .__link-item .__link-icon {
+        width: 80px;
+        background-size: contain;
+        background-repeat: no-repeat
+    }
+    
+    .__link-item a:hover {
+        color: #f68b1e
+    }
+    
+    .-col-tnc {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 2em;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: justify;
+        text-align-last: left
+    }
+    
+    section.-prime-items {
+        text-align: initial;
+        font-size: .9em
+    }
+    
+    section.-how {
+        color: rgba(27, 27, 27, 1)
+    }
+    
+    section.-prime-items h4 {
+        padding-left: 5px;
+        text-align: center
+    }
+    
+    .city-card {
+        padding: .6em;
+        border-top-left-radius: .6em;
+        border-top-right-radius: .6em;
+        background: #f5f5f5;
+        background: -moz-linear-gradient(0deg, rgba(245, 245, 245, 1) 0, rgba(255, 255, 255, 1) 64%);
+        background: -webkit-linear-gradient(90deg, rgba(245, 245, 245, 1) 0, rgba(255, 255, 255, 1) 50%);
+        background: linear-gradient(0deg, rgba(245, 245, 245, 1) 0, rgba(255, 255, 255, 1) 50%);
+        transform-style: preserve-3d
+    }
+    
+    .city-card::after,
+    .city-card::before {
+        position: absolute;
+        content: " ";
+        height: 80%;
+        width: 15px;
+        border-radius: 100%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3)
+    }
+    
+    .city-card::before {
+        top: 46%;
+        left: -2px;
+        transform: rotate(-2deg) translate3d(50%, -50%, -1px)
+    }
+    
+    .city-card::after {
+        top: 50%;
+        right: -2px;
+        transform: rotate(2deg) translate3d(-50%, -50%, -1px)
+    }
+    
+    .-row.-values {
+        border-radius: .4em;
+        box-shadow: 0 0 .8em 0 rgba(208, 208, 208, 1)
+    }
+    
+    .city-card .list-option {
+        padding-left: 1.5em;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        background-color: #fff;
+        border: 1px solid rgba(208, 208, 208, 1);
+        border-radius: .3em
+    }
+    
+    .city-card .list-option:hover {
+        background-color: rgba(249, 188, 125, 1);
+        border: 1px solid rgba(246, 139, 1, 1)
+    }
+    
+    .city-card .list-option+.list-option {
+        margin-top: .5em
+    }
+    
+    .city-card .list-option .-col-auto:last-of-type {
+        margin-left: auto;
+        text-align: right
+    }
+    
+    .city-card .list-option h5:not([class$="-price"]) {
+        font-size: 1.2em
+    }
+    
+    .city-card .list-option span {
+        font-weight: 700;
+        color: #ff7300
+    }
+    
+    .city-card .list-option span.crcl-cta {
+        position: relative
+    }
+    
+    .city-card .list-option span.crcl-cta::after {
+        position: absolute;
+        display: block;
+        content: " ";
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border: 1px solid #ff7300;
+        border-radius: 100%;
+        box-shadow: inset 0 0 0 2px #fff
+    }
+    
+    .city-card .list-option:hover span.crcl-cta::after {
+        background-color: #ff7300
+    }
+    
+    section.-prime-benefits .-value-item,
+    section.-prime-offers .-value-item {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: .8em auto 0
+    }
+    
+    section.-prime-benefits.-jfood .-value-item {
+        margin: unset;
+        display: block
+    }
+    
+    section.-prime-benefits.-jfood {
+        overflow: unset
+    }
+    
+    section.-prime-benefits.-jfood .-container {
+        background-color: #fff
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-img {
+        padding: unset;
+        padding: 20px
+    }
+    
+    .-jfood .-row.-values {
+        padding: 15px 0
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-img img {
+        display: block
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-items .-item {
+        font-size: 1.3em;
+        font-weight: 300
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-items .-item .-arrow {
+        position: relative;
+        width: 20%;
+        max-width: 10px;
+        height: 10px
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-items .-item .-txt {
+        width: 70%;
+        margin-left: 3%;
+        letter-spacing: .3px
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-items .-item .-arrow::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg)
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-items .-item .-inlineblock {
+        vertical-align: middle
+    }
+    
+    section.-prime-benefits.-jfood .-value-item span.-small {
+        font-size: .9em;
+        font-weight: 700;
+        display: block;
+        margin-top: 15px;
+        letter-spacing: .5px
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-img img.-jfood {
+        width: 90%
+    }
+    
+    section.-prime-benefits.-jfood .-value-item div {
+        max-width: unset;
+        flex-basis: unset;
+        flex-grow: unset
+    }
+    
+    section.-prime-benefits.-jfood .-value-item .-img img {
+        width: 100%
+    }
+    
+    .-value-item figure {
+        -ms-flex: 0 0 33.3333333%;
+        flex: 0 0 33.3333333%;
+        max-width: 13.768em;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain
+    }
+    
+    .-value-item figure::before {
+        display: block;
+        content: " ";
+        padding-bottom: 100%
+    }
+    
+    .-value-item div {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        height: inherit;
+        letter-spacing: -.0833em
+    }
+    
+    .-value-item div h3,
+    .-value-item h3 {
+        padding: 15px 0 !important;
+        font-size: 1.5em;
+        margin: unset
+    }
+    
+    .-value-item div p {
+        margin-bottom: .5em;
+        line-height: 1.2;
+        font-size: 1.3em;
+        font-weight: 300;
+        text-align: left;
+        letter-spacing: .5px;
+        text-align-last: initial
+    }
+    
+    .-value-item div .-simply {
+        font-size: 1.3em;
+        letter-spacing: .2px;
+        font-weight: 300
+    }
+    
+    section.-prime-benefits .-col-12,
+    section.-prime-offers .-col-12 {
+        padding-right: 0;
+        padding-left: 0
+    }
+    
+    @media only screen and (max-width:767px) {
+        section.-prime-items .-col-12:not(:first-of-type) {
+        margin-top: .8em
+        }
+    
+        section.-prime-benefits .-col-12:nth-of-type(n+2),
+        section.-prime-offers .-col-12:nth-of-type(n+2) {
+        border-top: 1px solid rgba(208, 208, 208, 1)
+        }
+    }
+    
+    @media only screen and (min-width:768px) {
+    
+        section.-prime-benefits .-col-12:nth-of-type(2n+1):not(:last-of-type),
+        section.-prime-offers .-col-12:nth-of-type(2n+1):not(:last-of-type) {
+        border-right: 1px solid rgba(208, 208, 208, 1)
+        }
+    
+        section.-prime-benefits .-col-12:nth-of-type(n+3),
+        section.-prime-offers .-col-12:nth-of-type(n+3) {
+        border-top: 1px solid rgba(208, 208, 208, 1)
+        }
+    }
+    
+    section.layout.-sbs-steps ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style: none
+    }
+    
+    section.layout.-sbs-steps ul:not(:last-of-type) {
+        margin-bottom: .7em
+    }
+    
+    section.layout.-sbs-steps li {
+        position: relative
+    }
+    
+    section.layout.-sbs-steps ul li:first-of-type::before {
+        position: absolute;
+        display: block;
+        content: " ";
+        left: -40px;
+        width: 33px;
+        height: 33px;
+        background-image: url(https://eg.jumia.is/cms/jprime/g-check-2x.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain
+    }
+    
+    section.layout.-sbs-steps li:nth-of-type(n+2) {
+        margin-top: .2em;
+        padding-left: 0;
+        line-height: 1.2;
+        font-size: 1.1em;
+        font-weight: 300
+    }
+    
+    section.layout.-sbs-steps li h3 {
+        margin-bottom: auto;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.7em;
+        font-weight: 600
+    }
+    
+    .osh-featured-box>footer {
+        z-index: 0
+    }
+    
+    .rating-stars>.stars-container>.stars,
+    .sku:hover,
+    .status-txt-wrapper,
+    section.featured_box.-clearfix,
+    span.status-txt-wrapper {
+        z-index: 0
+    }
+    
+    section[id*=featured] {
+        margin: 1.2em auto;
+        padding: 8px 15px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 0 10px 0 rgba(11, 11, 11, .1)
+    }
+    
+    section.featured_box {
+        background-color: #fff
+    }
+    
+    footer {
+        position: relative;
+        z-index: 1
+    }
+    
+    .osh-featured-box>header {
+        overflow: hidden
+    }
+    
+    .-inline_block,
+    .-inlineblock {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%
+    }
+    
+    .-inlineblock {
+        width: unset
+    }
+    
+    .-description,
+    .-video {
+        text-align: center
+    }
+    
+    .-description {
+        text-align: left;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+    
+    .-video>iframe {
+        width: 560px;
+        height: 315px;
+        border: none
+    }
+    
+    .-sbs-steps {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        height: 315px;
+        box-sizing: content-box;
+        overflow: hidden !important;
+        position: relative
+    }
+    
+    .-container.-ctnr-list {
+        width: 90%;
+        margin: 0 auto;
+        max-width: unset
+    }
+    
+    .-posrel {
+        position: relative
+    }
+    
+    .-posabs {
+        position: absolute
+    }
+    
+    section.layout.-header-nav .-header-banner .-usp {
+        left: 50%;
+        line-height: 1;
+        font-size: 1.8em;
+        font-weight: 700;
+        bottom: 6%;
+        transform: translateX(-50%);
+        width: 100%
+    }
+    
+    section.layout.-header-nav .-header-banner .-usp ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center
+    }
+    
+    section.layout.-header-nav .-header-banner .-usp ul li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 5px;
+        text-transform: uppercase
+    }
+    
+    section.layout.-header-nav .-header-banner .-usp ul li a {
+        font-size: .55em;
+        color: #000;
+        display: block;
+        letter-spacing: .5px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2)
+    }
+    
+    section.layout.-header-nav .-header-banner .-availability {
+        bottom: 3%;
+        right: 1%;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.2em
+    }
+    
+    .city-card .list-option .-polygon {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #f90;
+        width: 40px;
+        height: 40px;
+        text-align: center
+    }
+    
+    .city-card .list-option .-polygon span {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-size: .9em;
+        line-height: 1;
+        font-weight: 700;
+        color: #000
+    }
+    
+    .city-card .list-option .-polygon::after,
+    .city-card .list-option .-polygon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        background: #f90
+    }
+    
+    .city-card .list-option .-polygon::after {
+        transform: rotate(60deg)
+    }
+    
+    .city-card .list-option .-polygon::before {
+        transform: rotate(30deg)
+    }
+    
+    .-terms {
+        display: block;
+        width: unset;
+        height: unset;
+        background-image: unset;
+        background-size: unset;
+        border-radius: 5px;
+        padding: 5px 10px;
+        top: 50%;
+        bottom: unset;
+        transform: translateY(-50%);
+        color: #fff;
+        background-color: #000
+    }
+    
+    .-partnership {
+        background: radial-gradient(#89a4b5, #49515c)
+    }
+    
+    .-partnership .-value-item {
+        margin-top: unset !important
+    }
+    
+    .-partnership .-value-item figure {
+        filter: invert(89%) sepia(100%) saturate(1%) hue-rotate(57deg) brightness(104%) contrast(101%)
+    }
+    
+    .-partnership .-value-item .-col {
+        background-image: url(https://ng.jumia.is/cms/8-18/jumia-prime/uber-handv2.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: right center
+    }
+    
+    .-partnership .-value-item .-col h3 {
+        color: #fff
+    }
+    
+    .-partnership .-value-item .-col p {
+        width: 40%;
+        color: #fff
+    }
+    
+    .-agreement {
+        font-weight: 500;
+        font-size: 1.2em;
+        text-align: center
+    }
+    
+    .-agreement a {
+        color: #f68b1e;
+        text-decoration: underline
+    }
+    
+    ol h3 {
+        padding-left: unset !important
+    }
+    
+    .layout.-start {
+        margin-bottom: unset;
+        padding-bottom: unset !important
+    }
+    
+    .layout.-terms-top {
+        padding-top: unset !important
+    }
+    
+    .-prime-plans {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        border-radius: .4em;
+        transform-style: preserve-3d;
+        background-color: #fff !important;
+        box-shadow: 0 0 .8em 0 rgba(208, 208, 208, 1);
+        padding: unset !important
+    }
+    
+    .-prime-plans .-container {
+        padding: unset !important
+    }
+    
+    .-benefits .-table .-tr {
+        padding: 10px 0
+    }
+    
+    .-benefits .-table .-tr:nth-child(odd) {
+        background-color: #fffaf3
+    }
+    
+    .-benefits .-table .-tr .-col {
+        width: calc(100% / 3);
+        padding: 0 20px;
+        font-size: 1.3em;
+        position: relative
+    }
+    
+    .-benefits .-table .-tr .-col:first-child {
+        padding-left: 30px
+    }
+    
+    .-benefits .-table .-tr:not(.-head):not(.-foot) .-col:first-child::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+        top: 50%;
+        left: 2%;
+        transform: translateY(-50%) rotate(45deg)
+    }
+    
+    .-benefits .-table .-tr .-col:nth-child(2),
+    .-benefits .-table .-tr .-col:nth-child(3) {
+        text-align: center
+    }
+    
+    .-benefits .-table .-tr.-head {
+        padding: 20px 0;
+        background-color: #f90
+    }
+    
+    .-benefits .-table .-tr.-foot .-col,
+    .-benefits .-table .-tr.-head .-col {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.5em
+    }
+    
+    .-benefits .-table .-tr.-head .-col {
+        color: #fff
+    }
+    
+    .-benefits .-table .-tr.-foot .-col {
+        font-size: 1.4em
+    }
+    
+    .-benefits .-table .-tr.-foot {
+        padding: 20px 0
+    }
+    
+    .-iroko {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-bottom: 15px
+    }
+    
+    .-iroko img {
+        width: 100%
+    }
+    
+    .-terms_b {
+        height: 18px;
+        margin-top: 30px
+    }
+    
+    .benefits-img img {
+        width: 70%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    
+    .benefits-img {
+        display: inline-block !important;
+        width: 25% !important;
+        max-width: 150px;
+        height: 150px;
+        position: relative
+    }
+    
+    .benefits-details-section {
+        display: inline-block !important;
+        width: 70%
+    }
+    
+    .-tandcs_items {
+        font-size: 1em
+    }
+    
+    .-tandcs_items>li {
+        margin: 10px 0
+    }
+    
+    .-tandcs_items>li ul,
+    .-tandcs_items>li ol {
+        padding-left: 40px
+    }
+    
+    .-tandcs_items h3,
+    .-tandcs_items h5 {
+        margin-bottom: 5px;
+        font-size: 18px;
+        color: #f49719;
+        margin: 20px 0;
+    }
+    
+    .-tandcs_items p {
+        margin: 10px
+    }
+    
+    span.-accentColor {
+        color: #f90;
+        font-weight: bold
+    }
+    </style>
+<main class="osh-container static-page" role="main">   
+    <div class="-container">
+        <div class="section group">
+          <div class="section group">
+            <div class="col span_12_of_12">
+              <center>
+                <p class="head1 fs-2 fw-bolder">KbeeStore Privacy Notice</p>
+                <div style="background: #000; width: 100%; max-width: 1170px; height: 2px;"></div>
+              </center>
+            </div>
+            <div class="col span_12_of_12">
+              <div class="-tbl-content">
+                <ol>
+                  <li><a href="#aboutPrivacy">About this Notice</a></li>
+                  <li><a href="#whoWeAre">Who We Are</a></li>
+                  <li><a href="#dataWeCollect">The Data We Collect About You?</a></li>
+                  <li><a href="#cookies">Cookies and other Identifiers</a></li>
+                  <li><a href="#useYourPersonalData">How We Use Your Personal Data</a></li>
+                  <li><a href="#legalBasis">Legal basis for the processing of Personal Data</a></li>
+                  <li><a href="#shareYourPersonalData">How We Share Your Personal Data</a></li>
+                  <li><a href="#interTransfers">International Transfers</a></li>
+                  <li><a href="#dataRetention">Data Retention</a></li>
+                  <li><a href="#dataSecurity">Data Decurity</a></li>
+                  <li><a href="#legalRights">Your Legal Rights</a></li>
+                  <li><a href="#dataControllers">Data Controllers &amp; Contact</a></li>
+                </ol>
+              </div>
+              <ol class="-tandcs_items">
+                <h3 id="aboutPrivacy">1. About this Notice</h3>
+                <li>This Privacy Notice provides information on how KbeeStore collects and processes your personal data when you visit our website or mobile applications. It sets out what we do with your personal data and how we keep it secure and explains the rights that you have in relation to your personal data.</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="whoWeAre">2. Who We Are</h3>
+                <li>Kbee COmputers is one of the best e-commerce platform in Ghana. Our platform consists of our marketplace, which connects sellers with consumers, our logistics service, which enables the shipment and delivery of packages from sellers to consumers, and our payment service, which facilitates transactions among participants active on our platform in selected markets.</li>
+                <li>This website and/or mobile app is operated by a member of the P&J Tech group of companies. Information on our subsidiaries can be found on our website.</li>
+                <li>Any personal data provided or collected by KbeeStore is controlled by the subsidiary that the website and/or mobile app relates to.</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="dataWeCollect">3. The Data We Collect About You?</h3>
+                <li>Personal data means any information that can be used to identify directly or indirectly a specific individual. We collect your personal data in order to provide tailored products and services and in order to analyse and continually improve our products and services. We may collect, use, store and transfer different kinds of personal data for marketing and personal data optimization purposes. <li>
+                <li>You provide us with your personal data when you register your personal details on our website and mobile platforms and transact with the same.</li>
+                <li>The personal data we collect includes:</li>
+                <li><strong>A.</strong> <span class="-accentColor">Information you provide to us:</span> We receive and store the information you provide to us including your identity data, contact data, biometric data, delivery address and financial data. These types of personal data may include:
+                  <ol style="list-style-type: lower-roman;">
+                    <li>contact details (such as your name, postal addresses, phone numbers and email addresses),</li>
+                    <li>online registration information (such as your password and other authentication information),</li>
+                    <li>payment information (such as your Mobile Number information and billing address),</li>
+                    <li>information provided as part of online questionnaires (such as responses to any customer satisfaction surveys or market research),</li>
+                    <li>competition entries/submissions, and</li>
+                    <li>in certain cases your marketing preferences.</li>
+                  </ol>
+                </li>
+                <li><strong>B.</strong> <span class="-accentColor">Information we automatically collect/generate or obtain from third parties:</span> We automatically collect and store certain types of information regarding your use of our site including information about your searches, views, downloads and purchases. In addition, we may receive information about you from third parties including our carriers; payment service providers; merchants/brands; and advertising service providers.<br><br>These types of personal data may relate to your device (such as your PC, tablet or other mobile device), your use of our websites and apps (as well as certain third party websites with whom we have partnered), and/or your personal preferences, interests, or geographic location. Examples of these types of information include:
+                  <ol style="list-style-type: lower-roman;">
+                    <li>information about your device, operating system, browser and IP address,</li>
+                    <li>unique identifiers associated with your device,</li>
+                    <li>details of web pages that you have visited,</li>
+                    <li>which products you have looked at online (including information about products you have searched for or viewed, purchased or added to an online shopping basket),</li>
+                    <li>how long you spend on certain areas of a website or app together with the date and time of your visit/usage,</li>
+                    <li>personal data contained within user-generated content (such as blogs and social media postings),</li>
+                    <li>social media user name or ID, and</li>
+                    <li>social media profile photo and other social media profile information (such as number of followers).</li>
+                  </ol>
+                </li>
+                <li>We strive to provide you with choices regarding the Personal Data that you provide to us. Where required by law, if you wish to have your Personal Data used by Jumia to provide you with a personalized experience/targeted advertising &amp; content, you can indicate so through the relevant tick-box(es) located on the registration form or by answering the question(s) presented by Jumia representatives. If you decide that you no longer wish to benefit from this personalization, you can opt-out or adjust your preferences at any time by closing your account or by sending an email to <span style="font-weight: bold">kbeecomputers@gmail.com</span></li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="cookies">4. Cookies and other Identifiers</h3>
+                <li>A cookie is a small file of letters and numbers that we put on your computer, mobile phone or tablet if you agree. Cookies allow us to distinguish you from other users of our website and mobile applications, which helps us to provide you with an enhanced browsing experience. For more information about cookies and how we use them, please read our Cookie Notice:</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="useYourPersonalData">5. How We Use Your Personal Data</h3>
+                <li>We use your personal data to operate, provide, develop and improve the products and services that we offer, including the following:
+                  <ol style="list-style-type: upper-alpha;">
+                    <li>Registering you as a new customer.</li>
+                    <li>Processing and delivering your orders.</li>
+                    <li>Managing your relationship with us.</li>
+                    <li>Enabling you to participate in promotions, competitions and surveys.</li>
+                    <li>Improving our website, applications, products and services.</li>
+                    <li>Recommending/advertising products or services which may be of interest to you.</li>
+                    <li>Enabling you to access certain products and services offered by our partners and vendors. </li>
+                    <li>Complying with our legal obligations, including verifying your identity where necessary.</li>
+                    <li>Detecting fraud.</li>
+                  </ol>
+                </li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="legalBasis">6. Legal basis for the processing of Personal Data</h3>
+                <li>We will only process your personal data where we have a legal basis to do so. The legal basis will depend on the purposes for which we have collected and used your personal data. In almost every case the legal basis will be one of the following:
+                  <ol style="list-style-type: upper-alpha;">
+                    <li><span class="-accentColor">Consent:</span> For example, where you have provided your consent to receive certain marketing from us. You can withdraw your consent at any time, including by clicking on the “unsubscribe” link at the bottom of any marketing email we send you</li>
+                    <li><span class="-accentColor">Our legitimate business interests:</span> Where it is necessary for us to understand our customers, promote our services and operate effectively, provided in each case that this is done in a legitimate way which does not unduly affect your privacy and other rights.</li>
+                    <li><span class="-accentColor">Performance of a contract with you:</span> This would also apply where we need to take steps prior to entering into a contract with you. For example, where you have purchased a product from us and we need to use your contact details and payment information in order to process your order and send the product to you.</li>
+                    <li><span class="-accentColor">Compliance with law:</span> Where we are subject to a legal obligation and need to use your personal data in order to comply with that obligation.</li>
+                  </ol>
+                </li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="shareYourPersonalData">7. How We Share Your Personal Data</h3>
+                <li>A. We may need to share your personal data with third parties for the following purposes:
+                  <ol style="list-style-type: lower-roman;">
+                    <li>Sale of products and services: In order to deliver products and services purchased on our marketplace from third parties, we may be required to provide your personal data to such third parties.</li>
+                    <li>Working with third party service providers: We engage third parties to perform certain functions on our behalf. Examples include fulfilling orders for products or services, delivering packages, analyzing data, providing marketing assistance, processing payments, transmitting content, assessing and managing credit risk, and providing customer service.</li>
+                    <li>Business transfers: As we continue to develop our business, we might sell or buy other businesses or services. In such transactions, customer information may be transferred together with other business assets.</li>
+                    <li>Detecting fraud and abuse: We release account and other personal data to other companies and organizations for fraud protection and credit risk reduction, and to comply with applicable law.</li>
+                  </ol>
+                </li>
+                <li>B. When we share your personal data with third parties we:
+                  <ul>
+                    <li>require them to agree to use your data in accordance with the terms of this Privacy Notice, our Privacy Policy and in accordance with applicable law; and</li>
+                    <li>only permit them to process your personal data for specified purposes and in accordance with our instructions. We do not allow our third-party service providers to use your personal data for their own purposes.</li>
+                  </ul>
+                </li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="interTransfers">8. International Transfers</h3>
+                <li>We may transfer your personal data to locations in another country, if this is permissible pursuant to applicable laws in your location. There are inherent risks in such transfers.</li>
+                <li>In the event of international transfers of your personal data, we shall put in place measures necessary to protect your data and ensure the same level of protection available in the country of data origin. We shall continue to respect your legal rights pursuant to the terms of this Privacy Notice and applicable laws in your location.</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="dataRetention">9. Data Retention</h3>
+                <li>We will take every reasonable step to ensure that your personal data is processed for the minimum period necessary for the purposes set out in this Privacy Notice. Your Personal Data may be retained in a form that allows for identification only for as long as:
+                  <ol style="list-style-type: upper-alpha;">
+                    <li>We maintain an ongoing relationship with you. This will enable us to improve your experience with us and to ensure that you receive communications from us</li>
+                    <li>Your Personal Data is necessary in connection with the purposes set out in this Privacy Notice and we have a valid legal basis,</li>
+                    <li>The duration of: (i) any applicable limitation period (i.e., any period during which a person could bring a legal claim against us), and</li>
+                  </ol>
+                </li>
+                <li>We will actively review the personal data we hold and delete it securely, or in some cases anonymise it, when there is no longer a legal, business or consumer need for it to be retained. </li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="dataSecurity">10. Data Security</h3>
+                <li>We have put in place security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed.</li>
+                <li>In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.</li>
+                <li>We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="legalRights">11. Your Legal Rights</h3>
+                <li>A. It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us.</li>
+                <li>B. Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to access, correct or erase your personal data, object to or restrict processing of your personal data, right to ask that we transfer your personal data to a third party, and unsubscribe from our emails and newsletters.</li>
+                <li>C. We can refuse to accede to your request where it is unreasonable or where you have failed to provide additional information necessary to confirm your identity.</li>
+              </ol>
+              <ol class="-tandcs_items">
+                <h3 id="dataControllers">12. Data Controllers &amp; Contact </h3>
+                <li>If you have any questions or concerns about KbeeStore's Privacy Notice or you are looking for more information on how we process your personal data, or  wish to exercise your legal rights in respect of your personal data, please contact the Data Privacy Officer by email at kbeecomputers@gmail.com or call our hotline:-0277597787</li>
+                <li><strong>We will investigate any complaint about the way we manage Personal Data and ensure that we respond to all substantiated complaints within prescribed timelines. </strong></li>
+              </ol>
+              
+            </div>
+          </div>
+        </div>
+        <a href="javascript:;" class="ToTop" style="display: none;"></a>
+    
+        <br>
+        <br>
+      </div></main>
+
+{% endblock main-content %}
+
+
+{% block footer %}
+<hr style="color:black; height:2px;">
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid">
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social media:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Kbee Store</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Our products is UK-Used items or secondhand products which is very neat with no scratch. <br>
+            Buying second hand products is simply a great way to save money.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'category' 'HP'%}" class="text-white text-decoration-none">HP Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'AP'%}" class="text-white text-decoration-none">Apple Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'LE'%}" class="text-white text-decoration-none">Lenovo Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'MS'%}" class="text-white text-decoration-none">Other Laptops</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'service' %}" class="text-white text-decoration-none">Our Service</a>
+            </p>
+            <p>
+              <a href="{% url 'about' %}" class="text-white text-decoration-none">About Us</a>
+            </p>
+            <p>
+              <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Policy and Privacy</a>
+            </p>
+            <p>
+              <a href="#" class="text-white text-decoration-none">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i>Ghana, Accra-Central </p>
+            <p><i class="fas fa-envelope mr-3"></i> kbeecomputers@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +233277597787</p>
+            <p><i class="fab fa-whatsapp mr-3"></i> +233248147215</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright:
+      <a class="text-white text-decoration-none" href="#"
+         >Kbee Store | P&J Tech Inc</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+{% endblock footer %}

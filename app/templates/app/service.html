@@ -1,0 +1,330 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Service{% endblock title %}
+{% block css %}
+.card {
+    border-radius: .7rem;
+}
+{% endblock css %}
+{% block main-content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Our Services</h1>
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="{% static 'app/images/banner/s3.png' %}" alt="Placeholder Image" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Product Sourcing</h5>
+            <p class="card-text">We source the highest-quality products from around the world to ensure that our customers receive only the best.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="{% static 'app/images/banner/s2.webp' %}" alt="Placeholder Image" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Fast Shipping</h5>
+            <p class="card-text">We use the latest technology to ensure that our customers receive their orders quickly and securely.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="{% static 'app/images/banner/s1.webp' %}" alt="Placeholder Image" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Exceptional Customer Service</h5>
+            <p class="card-text">We believe that our success is built on our commitment to customer satisfaction, and we strive to provide exceptional customer service at all times.</p>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 mb-5">
+          <div class="card">
+            <img src="{% static 'app/images/banner/s4.webp' %}" alt="Placeholder Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Communication</h5>
+              <p class="card-text">
+                We understand that you may have questions or concerns about the current situation and we want to assure you that we are here to support you. If you have any questions or need assistance with your order, please don't hesitate to contact us. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card">
+            <img src="{% static 'app/images/banner/s5.webp' %}" alt="Placeholder Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Working Days</h5>
+              <p class="card-text">Our business is open Monday through Friday from 9:00am to 5:00pm GMT. We are closed on weekends and major holidays. During our business hours, we are available to assist you with any questions or concerns  </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card">
+            <img src="{% static 'app/images/banner/s6.jpg' %}" alt="Placeholder Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Product Quality</h5>
+              <p class="card-text">Durability: Our products are built to last and are made with durable materials that can withstand everyday wear and tear.
+
+                Functionality: We design our products with functionality in mind to ensure that they meet the needs of our customers. Whether you're looking for a product that can help you stay organized or one that can simplify your daily routine, we have you covered.</p>
+            </div>
+          </div>
+      </div>
+</div>
+
+
+
+<section style="color: #000; background-color: #f3f2f2;">
+<div class="container py-5">
+    <div class="row d-flex justify-content-center">
+    <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bold mb-4">Testimonials</h3>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+            Here are some feedback messages from our customers
+        </p>
+    </div>
+    </div>
+
+    <div class="row text-center">
+    <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+        <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Teresa May</h5>
+            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star-half-alt fa-sm text-info"></i>
+            </li>
+            </ul>
+            <p class="mb-2">
+            <i class="fas fa-quote-left pe-2"></i>I have been a loyal customer of Your Ecommerce Site for several years now and I couldn't be happier with their products and service. I appreciate their commitment to sourcing high-quality products and their dedication to customer satisfaction. Every order I have placed has arrived on time and in perfect condition. Your Ecommerce Site is my go-to for all my online shopping needs
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+        <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Maggie McLoan</h5>
+            <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            </ul>
+            <p class="mb-2">
+            <i class="fas fa-quote-left pe-2"></i>I was hesitant to purchase from an online store, but Your Ecommerce Site made the process so easy and stress-free. Their website is user-friendly and the checkout process was seamless. The product I received was exactly as described and arrived much faster than expected. I will definitely be shopping with Your Ecommerce Site again in the future!
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-0">
+        <div class="card">
+        <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Alexa Horwitz</h5>
+            <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="fas fa-star fa-sm text-info"></i>
+            </li>
+            <li>
+                <i class="far fa-star fa-sm text-info"></i>
+            </li>
+            </ul>
+            <p class="mb-2">
+            <i class="fas fa-quote-left pe-2"></i>"I have been shopping on Your Ecommerce Site for over a year now and I have never been disappointed. Their products are of high quality and their customer service is exceptional. I highly recommend Your Ecommerce Site to anyone looking for a reliable and trustworthy online shopping experience.
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>          
+{% endblock main-content %}
+
+
+{% block footer %}
+<hr>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid">
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social media:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Kbee Store</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Our products is UK-Used items or secondhand products which is very neat with no scratch. <br>
+            Buying second hand products is simply a great way to save money.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'category' 'HP'%}" class="text-white text-decoration-none">HP Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'AP'%}" class="text-white text-decoration-none">Apple Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'LE'%}" class="text-white text-decoration-none">Lenovo Laptops</a>
+            </p>
+            <p>
+              <a href="{% url 'category' 'MS'%}" class="text-white text-decoration-none">Other Laptops</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="{% url 'service' %}" class="text-white text-decoration-none">Our Service</a>
+            </p>
+            <p>
+              <a href="{% url 'about' %}" class="text-white text-decoration-none">About Us</a>
+            </p>
+            <p>
+              <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Policy and Privacy</a>
+            </p>
+            <p>
+              <a href="#" class="text-white text-decoration-none">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i>Ghana, Accra-Central </p>
+            <p><i class="fas fa-envelope mr-3"></i> kbeecomputers@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +233277597787</p>
+            <p><i class="fab fa-whatsapp mr-3"></i> +233248147215</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright:
+      <a class="text-white text-decoration-none" href="#"
+         >Kbee Store | P&J Tech Inc</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+{% endblock footer %}

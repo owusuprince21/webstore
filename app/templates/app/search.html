@@ -1,0 +1,48 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search{% endblock title %}
+
+{% block main-content %}
+
+    <h2 class="text-center mt-5"><span class="text-muted">Search results for</span> {{request.GET.search_query}}</h2>
+    <br><br>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger fw-bold text-center fs-1" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+            <div class="row">
+                {% for prod in products %}
+                   <div class="col-sm-3 offset-sm-1 text-center mb-4 "> 
+                        <a href="{% url 'product-detail' prod.id %}" class="text-decoration-none">
+                            <div class="goodnessseccont text-center">
+                                <img src="{{prod.product_image.url}}" class="img-responsive center-block" alt="">
+                                <h2 class="mlkpro title fw-bold" style="color:black;">{{prod.title}}</h2>
+                                <p class="text-decoration-line-through" style="color:blue; font-size:20px">GHS{{prod.selling_price}}0</p>
+                                <p style="color:blue; font-size:20px">GHS{{prod.discounted_price}}0</p>
+                                <div style="color:orange;>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger">View Item <i class="bi bi-cart4"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+       
+    </div>
+
+   
+{% endblock main-content %}
+
+
+

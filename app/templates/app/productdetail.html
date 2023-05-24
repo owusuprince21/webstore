@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}product-details{% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row flex justify-content-between">
+        <div class="img2 col-lg-5 mt-5">
+            <img src="{{product.product_image.url}}" class="image col-xs-6 col-sm-12 col-lg-12 mt-3 text-sm-center w-100">
+        </div>
+        <div class="productdetail col-lg-5">
+            <h1 style="font-family:'Josefin Sans', sans-serif; font-size:50px;text-align:center;" class="text-danger">{{product.title}}</h1>
+            <h5 class="text-decoration-line-through" style="font-family: 'Bebas Neue', cursive; color:blue; text-align:center;">GHS{{product.selling_price}}0</h5>
+            <h5 style="font-family: 'Bebas Neue', cursive; color:blue; text-align:center;">GHS{{product.discounted_price}}0</h5>
+            <h5 style="color:blue; text-align:center;">Product in stock: {{product.product_in_stock}}</h5>
+            <br><br> <h4 class="text-center fw-bolder">Product Specifications </h4>
+            <ul class="fs-5" style="font-family:Rajdhani;">
+                <li>{{product.description}}</li>
+                <li>{{product.composition}}</li>
+            </ul>
+
+            
+                <form action="/add-to-cart" class="d-inline btn">
+                    <input type="hidden" name="prod_id" value="{{product.id}}" />
+                    <button class="btn btn-primary mb-3" type="submit">Add to Cart <i class="bi bi-bag-fill"></i></button>
+                </form>
+                {% if wishlist %}
+                <a pid={{product.id}} class="minus-wishlist text-decoration-none text-white btn btn-danger mb-3">Add to Wishlist <i class="bi bi-heart-fill"></i></a>
+                {% else %}
+                <a pid={{product.id}} class="plus-wishlist text-decoration-none text-white btn btn-success mb-3">Add to Wishlist <i class="bi bi-heart-fill"></i></a>
+                {% endif %}
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="container-fluid">
+    <h3 class="text-center title">About the Device</h3>
+    <p class="text-center col-sm-8 offset-sm-2" style="font-family:'Josefin Sans', sans-serif;">{{product.about_the_device}}</p>
+    <h5 class="text-center col-sm-8 offset-sm-2 fs-3">Note:<span class="text-danger" style="font-size:16px">{{product.note}}</span></h5>
+</div>
+
+
+{% endblock main-content %}

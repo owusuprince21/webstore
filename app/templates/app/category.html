@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Category{% endblock title %}
+
+
+{% block main-content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+                    <div class="list-group">
+                        {% for val in title %}
+                        <a href="{% url 'category-title' val.title %}" class="list-group-item list-group-item-action" aria-current="true">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{val.title}}
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </div>
+        </div>
+        <div class="col-sm-9 mt-5">
+            <div class="row">
+                {% for prod in product %}
+                   <div class="col text-center mb-4 "> 
+                        <a href="{% url 'product-detail' prod.id %}" class="text-decoration-none">
+                            <div class="goodnessseccont text-center">
+                                <img src="{{prod.product_image.url}}" class="img-responsive center-block" alt="">
+                                <p class="mlkpro text-black title fw-bold">{{prod.title}}</p>
+                                <p class="text-decoration-line-through" style="font-size:20px">GHS{{prod.selling_price}}0</p>
+                                <p style="font-size:20px">GHS{{prod.discounted_price}}0</p>
+                                <div style="color:orange;>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger">View Item <i class="bi bi-cart4"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

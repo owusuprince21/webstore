@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Wishlist{% endblock title %}
+
+{% block main-content %}
+
+    <h2 class="text-center mt-5">Wishlist</h2>
+    <br><br>
+    <div class="container my-5">
+            <div class="row">
+                {% for prod in product %}
+                   <div class="col-sm-3 offset-sm-1 text-center mb-4 "> 
+                        <a href="{% url 'product-detail' prod.product.id %}" class="text-decoration-none">
+                            <div class="goodnessseccont text-center">
+                                <img src="{{prod.product.product_image.url}}" class="img-responsive center-block" alt="">
+                                <h2 class="mlkpro title fw-bold" style="color:black;">{{prod.product.title}}</h2>
+                                <p class="text-decoration-line-through" style="color:orange; font-size:20px">GHS{{prod.product.selling_price}}0</p>
+                                <p style="color:orange; font-size:20px">GHS{{prod.product.discounted_price}}0</p>
+                                <div style="color:orange;>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger">View Item <i class="bi bi-cart4"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+       
+    </div>
+
+   
+{% endblock main-content %}
+
+
+

@@ -1,0 +1,125 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{msg}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row mt-5">
+     <div class="col-sm-6">
+        <h4>Order Summary</h4>
+    <hr>
+        {% for item in cart_items %}
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h5>Product: {{item.product.title}}</h5>
+                    <p>Quantity: {{item.quantity}}</p>
+                    <p class="fw-bold">Price: {{item.product.discounted_price}}0</p>
+                </div>
+            </div>
+        {% endfor %}
+        <p class="fw-bold">Total Cost + GHS150 = {{totalamount}}0 </p>
+        <small>Condition Apply: Any customer within Greater Accra will received his or her product(s) between 2-5 hours
+            But any customer outside Accra will receive his/her item 24-48 hours with GHS150 charge
+        </small>
+    </div>
+    <div class="col-sm-4 offset-sm-1">
+        <h4>Choose your Address</h4>
+        <hr>
+        <form method='POST' id="myform">
+            {% csrf_token %}
+            {% for ad in add %}
+            <div class="card">
+                <div class="card-body">
+                    <h5>Hi! {{ad.name}}</h5>
+                    <p>Name: {{ad.name}}</p>
+                    <p>Locality: {{ad.locality}}</p>
+                    <p>Phone Number: 0{{ad.phone}}</p>
+                    <p>City: {{ad.city}}</p>
+                    <p>Region: {{ad.region}}</p>
+                    <p>Zip Code: {{ad.zipcode}}</p>
+                </div>
+            </div>
+            <div class="form-check mt-2 mb-5">
+                <input class="form-check-input" type="radio" name="custid" id="custadd{{forloop.counter}}" value="{{ad.id}}">
+                <label class="form-check-label fw-bold" for="custadd{{forloop.counter}}">
+                    Address:{{forloop.counter}}</label>
+            </div>
+            {% endfor %}
+            <div class="form-check mb-3">
+                <label for="totamount" class="form-check-label">Total Amount </label>
+                <input type="number" class="form-control" name="totamount" value="{{totalamount}}" readonly>
+            </div>
+            <div class="text-center">
+               <!--<button type="submit" class="btn btn-warning mt-2 mb-3 px-5 fw-bold">Continue</button>--> 
+                <!---->
+                <button id="rzp-button1" type="submit" class="btn btn-success mt-2 mb-3 px-5 fw-bold">Make Payment</button> 
+            </div>
+        </form>
+    </div>
+</div>
+</div>    
+{% endblock main-content %}
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+/*    
+var options = {
+    "key": "rzp_test_e9TFoot6A1uRRu", // Enter the Key ID generated from the Dashboard
+    "amount": "{{razoramount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR", 
+    "name": "KbeeStore Pay",
+    "description": "Test Transaction",
+    //"image": "https://example.com/your_logo",
+    "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    
+    "handler": function (response){
+        console.log("success")
+        var form = document.getElementById("myform");
+       //alert(form.elements["custid"].value);
+        // alert(response.razorpay_payment_id);
+       // alert(response.razorpay_order_id);
+        //alert(response.razorpay_signature)
+        window.location.href= `http://localhost:8080/paymentdone?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}&cust_id=${form.elements["custid"].value}`
+    },
+    
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response)){
+        alert(response.error.description);
+}      
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+*/
+
+
+var options = {
+    "key": "rzp_test_0kMw9IjXedRdBZ", // Enter the Key ID generated from the Dashboard
+    "amount": "{{razoramount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "KbeeStore Pay", //your business name
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
